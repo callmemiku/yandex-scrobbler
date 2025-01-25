@@ -23,7 +23,7 @@
         "https://music.yandex.ru/*"
       ],
       "js": [
-        "content.obfuscated.js"
+        "content.js"
       ]
     }
   ],
