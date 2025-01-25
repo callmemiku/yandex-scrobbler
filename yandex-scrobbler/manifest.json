@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "miku's yandex scrobbler",
+  "version": "1.0",
+  "description": "==нюхаем яндекс и заливаем==",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://music.yandex.ru/*",
+    "https://www.last.fm/*"
+  ],
+  "background": {
+    "type": "module",
+    "service_worker": "dist/background.bundle.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://music.yandex.ru/*"
+      ],
+      "js": [
+        "content.obfuscated.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "action": {
+    "default_popup": "static/popup.html",
+    "default_icon": {
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+  }
+}
